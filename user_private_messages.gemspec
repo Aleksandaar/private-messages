@@ -1,16 +1,16 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'private_messages/version'
+require 'user_private_messages/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "private_messages"
+  spec.name          = "user_private_messages"
   spec.version       = PrivateMessages::VERSION
   spec.authors       = ["Aleksandar Zoric"]
   spec.email         = ["aleksandroz.mail@gmail.com"]
   spec.summary       = %q{Private messaging system}
   spec.description   = %q{Basic private messaging system between users on a site}
-  spec.homepage      = "https://github.com/Aleksandaar/private-messages"
+  spec.homepage      = "https://github.com/Aleksandaar/user-private-messages"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")

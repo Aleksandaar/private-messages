@@ -1,7 +1,7 @@
 require 'active_record'
 require File.dirname(__FILE__) + '/../lib/has_private_messages_extensions'
 require File.dirname(__FILE__) + '/../lib/private_message_extensions'
-require File.dirname(__FILE__) + '/../lib/private_messages'
+require File.dirname(__FILE__) + '/../lib/user_private_messages'
 
 require 'byebug'
 require 'thread'

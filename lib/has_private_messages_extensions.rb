@@ -19,13 +19,11 @@ module PrivateExtension #:nodoc:
 
             has_many :sent_messages, -> { where("#{table_name}.sender_deleted = ?", false).order("#{table_name}.created_at DESC") },
                      :class_name => options[:class_name],
-                     :foreign_key => 'sender_id',
-                     :as => :recipient
+                     :foreign_key => 'sender_id'
 
             has_many :received_messages, -> { where("#{table_name}.recipient_deleted = ?", false).order("#{table_name}.created_at DESC") },
                      :class_name => options[:class_name],
-                     :foreign_key => 'recipient_id',
-                     :as => :sender
+                     :foreign_key => 'recipient_id'
 
 
             extend ClassMethods
