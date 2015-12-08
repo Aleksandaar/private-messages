@@ -6,11 +6,11 @@ require 'private_messages/version'
 Gem::Specification.new do |spec|
   spec.name          = "private_messages"
   spec.version       = PrivateMessages::VERSION
-  spec.authors       = ["NKolosek"]
-  spec.email         = ["nesa@kolosek.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.authors       = ["Aleksandar Zoric"]
+  spec.email         = ["aleksandroz.mail@gmail.com"]
+  spec.summary       = %q{Private messaging system}
+  spec.description   = %q{Basic private messaging system between users on a site}
+  spec.homepage      = "https://github.com/Aleksandaar/private-messages"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
