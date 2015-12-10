@@ -1,7 +1,7 @@
 # UserPrivateMessages
 
 [![Gem Version](https://badge.fury.io/rb/user_private_messages.svg)](https://badge.fury.io/rb/user_private_messages)
-[![Gem Version](https://img.shields.io/badge/Rails-4-green.svg)]
+(https://img.shields.io/badge/Rails-4-green.svg)
 
 This gem provides basic private messaging functionality between the users
 of a site. Easy and simple setup, and simple database relations.
