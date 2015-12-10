@@ -13,7 +13,7 @@ Rails 4 compatible.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'private_messages'
+gem 'user_private_messages'
 ```
 
 And then execute:
