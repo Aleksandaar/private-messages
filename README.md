@@ -104,6 +104,10 @@ in one step due to the sender and recipient being the same.
 
 No scaffolding for now for Rails 4
 
+## Mission
+
+This repo is a continuation of the dead SimplePrivateMessages project. Our mission is to keep SimplePrivateMessages alive and moving forward, with maintenance fixes and new features. Pull Requests are welcome!
+
 ## Contributing
 
 1. Fork it ( https://github.com/Aleksandaar/user-private-messages/fork )
