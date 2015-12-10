@@ -21,12 +21,10 @@ Or install it yourself as:
 
 ## Usage
 
-= Usage
-
 Examples assume you're using Restful Authentication or AAA, with a user model
 of User and message model of Message.
 
-== Creating / sending a message:
+### Creating / sending a message:
 
   aleks = User.find_by_login("aleks")
   john = User.find_by_login("john")
@@ -38,7 +36,7 @@ of User and message model of Message.
   message.recipient = john
   message.save
 
-== Reading a message
+### Reading a message
 
   message = Message.read_message(id, user)
 
@@ -50,7 +48,7 @@ You can also check if a message has been read with the following:
 
   message.message_read?
 
-== Retrieving a user's received mail
+### Retrieving a user's received mail
 
   aleks = User.find_by_login("aleks")
   aleks.received_messages
@@ -63,16 +61,16 @@ Or the following for true or false on whether there are unread messages:
 
   aleks.unread_messages?
 
-== Retrieving a user's sent mail
+### Retrieving a user's sent mail
 
   aleks = User.find_by_login("aleks")
   aleks.sent_messages
 
-== Custom finds
+### Custom finds
 
   aleks.sent_messages.where("read_at < ?", 2.days.ago)
 
-== Deleting a message
+### Deleting a message
 
   aleks = User.find_by_login("aleks")
   message = aleks.received_messages.find(3)
@@ -90,7 +88,7 @@ Now that both sender and recipient have marked the message deleted, it
 gets destroyed. Should a message be sent to oneself, it will be deleted
 in one step due to the sender and recipient being the same.
 
-= Scaffold
+## Scaffold
 
 No scaffolding for now for Rails 4
 
