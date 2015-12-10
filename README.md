@@ -1,6 +1,7 @@
-# PrivateMessages
+# UserPrivateMessages
 
-TODO: Write a gem description
+This gem provides basic private messaging functionality between the users
+of a site. Easy and simple setup, and simple database relations.
 
 ## Installation
 
@@ -12,19 +13,90 @@ gem 'private_messages'
 
 And then execute:
 
-    $ bundle
+    $ bundle install
 
 Or install it yourself as:
 
-    $ gem install private_messages
+    $ gem install user_private_messages
 
 ## Usage
 
-TODO: Write usage instructions here
+= Usage
+
+Examples assume you're using Restful Authentication or AAA, with a user model
+of User and message model of Message.
+
+== Creating / sending a message:
+
+  aleks = User.find_by_login("aleks")
+  john = User.find_by_login("john")
+
+  message = Message.new
+  message.subject = "Hi, Aleks"
+  message.body = "Long time no see"
+  message.sender = aleks
+  message.recipient = john
+  message.save
+
+== Reading a message
+
+  message = Message.read_message(id, user)
+
+Returns the message of the chosen id and ensures the passed user is either the
+sender or the recipient. If unread, it checks to see if the passed user is the
+recipient and if so marks the read_at timestamp.
+
+You can also check if a message has been read with the following:
+
+  message.message_read?
+
+== Retrieving a user's received mail
+
+  aleks = User.find_by_login("aleks")
+  aleks.received_messages
+
+The following will return aleks's number of unread messages:
+
+  aleks.unread_message_count
+
+Or the following for true or false on whether there are unread messages:
+
+  aleks.unread_messages?
+
+== Retrieving a user's sent mail
+
+  aleks = User.find_by_login("aleks")
+  aleks.sent_messages
+
+== Custom finds
+
+  aleks.sent_messages.where("read_at < ?", 2.days.ago)
+
+== Deleting a message
+
+  aleks = User.find_by_login("aleks")
+  message = aleks.received_messages.find(3)
+  message.mark_deleted(aleks)
+
+This will look at a message and mark it read by the sender or recipient,
+based on whichever Newman is. It now will no longer appear in Newman's
+messages.
+
+  smith = User.find_by_login("smith")
+  message = smith.sent_messages.find(3)
+  message.mark_deleted
+
+Now that both sender and recipient have marked the message deleted, it
+gets destroyed. Should a message be sent to oneself, it will be deleted
+in one step due to the sender and recipient being the same.
+
+= Scaffold
+
+No scaffolding for now for Rails 4
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/private_messages/fork )
+1. Fork it ( https://github.com/Aleksandaar/user-private-messages/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
