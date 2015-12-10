@@ -1,7 +1,12 @@
 # UserPrivateMessages
 
+[![Gem Version][GV img]][Gem Version]
+[Gem Version]: https://rubygems.org/gems/user_private_messages
+
 This gem provides basic private messaging functionality between the users
 of a site. Easy and simple setup, and simple database relations.
+Rails 4 compatible.
+
 
 ## Installation
 
